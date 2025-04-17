@@ -5,8 +5,19 @@ fn reverse(s: &String) -> String {
     reversed_string
 }
 
+
+fn is_palindrome(s: &String) -> bool {
+    let reversed = reverse(s);
+    reversed == *s
+}
+
+
 fn main() {
-    let my_input = String::from("Hello Santi");
+    let my_input = String::from("kayak");
     let reversed = reverse(&my_input);
-    println!("my_input reversed is {reversed}");
+    let palindrome = is_palindrome(&my_input);
+    match palindrome {
+        true => println!("my_input reversed is {reversed}, and is a palindrome"),
+        false => println!("my_input reversed is {reversed}, and is not a palindrome"),
+    }
 }
