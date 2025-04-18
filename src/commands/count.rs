@@ -12,11 +12,9 @@ pub fn run(s: Option<String>, chars: bool, words: bool) {
             if words {
                 let word_count = count_words(&value);
                 println!("Word count: {word_count}");
-            } else {
-                if chars {
-                    let char_count = utils::count_chars(&value);
-                    println!("Character count: {char_count}");
-                }
+            } else if chars {
+                let char_count = utils::count_chars(&value);
+                println!("Character count: {char_count}");
             }
         }
     }

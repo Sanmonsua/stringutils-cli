@@ -4,9 +4,8 @@ pub fn count_chars(s: &str) -> usize {
 }
 
 pub fn split_words(s: &str) -> Vec<&str> {
-    if count_chars(s) == 0 {
-        let words: Vec<&str> = Vec::new();
-        return words
+    if s.is_empty() {
+        return Vec::new()
     }
 
     let mut words = Vec::new();

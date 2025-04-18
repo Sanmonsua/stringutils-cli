@@ -1,8 +1,6 @@
 
 pub fn reverse(s: &str) -> String {
-    let chars = s.chars().rev();
-    let reversed_string = String::from_iter(chars);
-    reversed_string
+    s.chars().rev().collect()
 }
 
 pub fn run(s: Option<String>) {
