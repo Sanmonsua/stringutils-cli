@@ -25,12 +25,22 @@ pub fn run(s: Option<String>, chars: bool, words: bool) {
         None => println!("No argument has been passed."),
         Some(value) => {
             if words {
-                let (unique_words_list, are_unique) = unique_words(&value);
-                println!("Unique words: {unique_words_list:?}, all unique? {are_unique}");
+                let (unique_words_set, are_unique) = unique_words(&value);
+                println!("Unique words: {:?}", unique_words_set);
+                if are_unique {
+                    println!("All words are unique");
+                } else {
+                    println!("Not all words are unique");
+                }
             } else {
                 if chars {
-                    let (unique_char_list, are_unique) = unique_chars(&value);
-                    println!("Unique characters: {unique_char_list:?}, all unique? {are_unique}")
+                    let (unique_chars_set, are_unique) = unique_chars(&value);
+                    println!("Unique characters: {:?}", unique_chars_set);
+                    if are_unique {
+                        println!("All characters are unique");
+                    } else {
+                        println!("Not all characters are unique");
+                    }
                 }
             }
         }
